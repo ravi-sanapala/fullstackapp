@@ -1,0 +1,20 @@
+{
+  "name": "fullstackapp",
+  "description": "full stack web application with Next.js, TypeScript and GraphQL",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ravi-sanapala/fullstackapp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ravi-sanapala/fullstackapp/issues"
+  },
+  "homepage": "https://github.com/ravi-sanapala/fullstackapp#readme"
+}
