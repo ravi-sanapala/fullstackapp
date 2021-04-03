@@ -7,11 +7,11 @@ export default function index() {
         <Container maxWidth="sm">
             <Box my={4}>
                 <Typography variant="h4" component="h1" gutterBottom>
-                NextJS Example By Ravi Sanapala
+                    NextJS Example By Ravi Sanapala
                 </Typography>
-             <Link href="/about">
+             <Link href="/">
                  <Button variant="contained" color="primary">
-                     Go to the About Page
+                     Go to the Home Page
                  </Button>
              </Link>
             </Box>
