@@ -2,8 +2,15 @@
 
 import App from 'next/app';
 import React from 'react';
-
-export default({Component, pageProps})=>(
-     <Component {...pageProps}/>
-)
+import CssBaseline from '@material-ui/core/CssBaseline'
+import {ThemeProvider} from '@material-ui/core/styles'
+import {themeDark,themeLight} from 'lib/theme';
+export default function MyApp({Component, pageProps}){
+     return( 
+           <ThemeProvider theme={false ? themeDark: themeLight}>
+                <CssBaseline></CssBaseline>
+          <Component {...pageProps}/>
+          </ThemeProvider>
+          )
+     }
 
