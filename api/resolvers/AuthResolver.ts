@@ -31,4 +31,29 @@ async register(@Arg('input'){email, password}: AuthInput): Promise<UserResponse>
     const token = jwt.sign(payload, process.env.SESSION_SECRET || 'RAVISANAPALA');
     return {user,token}
 }
+
+
+
+
+
+@Mutation(()=>UserResponse)
+async login(@Arg('input'){email, password}: AuthInput): Promise<UserResponse>{
+    //1. Check for an excisting email
+    const existingUser= await UserModel.findOne({email});
+    if(!existingUser){
+        throw new Error('Invalid login');
+    }
+
+    //2.Check if  with hashed Password is valid
+    const valid = await bcrypt.compare(password,existingUser.password)
+    if(!valid){
+        throw new Error("Invalid Login")
+    }
+    //3. Store the user id on token payload
+    const payload = {
+        id:existingUser.id
+    }
+    const token = jwt.sign(payload, process.env.SESSION_SECRET || 'RAVISANAPALA');
+    return {user:existingUser,token}
+}
 }
